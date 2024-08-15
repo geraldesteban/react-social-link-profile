@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+const profileDetails = {
+  name: "Jessica Randall",
+  address: "London, United Kingdom",
+  about: "Front-end developer and avid reader.",
+  links: ["GitHub", "Frontend Mentor", "LinkedIn", "Twitter", "Instagram"],
+};
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ProfileCard />
     </div>
   );
 }
 
-export default App;
+function ProfileCard() {
+  return (
+    <div className="card">
+      <ProfileDetails />
+    </div>
+  );
+}
+
+function ProfileDetails() {
+  return (
+    <div>
+      <img
+        className="image-jessica"
+        src="images/avatar-jessica.jpeg"
+        alt="avatar jessica"
+      />
+      <div>
+        <h2 className="name">{profileDetails.name}</h2>
+        <p className="address">{profileDetails.address}</p>
+      </div>
+      <p className="about">"{profileDetails.about}"</p>
+      <ProfileLinks />
+    </div>
+  );
+}
+
+function ProfileLinks() {
+  return (
+    <div className="links">
+      {profileDetails.links.map(link => (
+        <p className="link">{link}</p>
+      ))}
+    </div>
+  );
+}
