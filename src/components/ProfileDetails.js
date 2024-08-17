@@ -1,3 +1,6 @@
+import React from "react";
+import { ProfileLinks } from "./ProfileLinks";
+
 const profileDetails = {
   name: "Jessica Randall",
   address: "London, United Kingdom",
@@ -5,23 +8,7 @@ const profileDetails = {
   links: ["GitHub", "Frontend Mentor", "LinkedIn", "Twitter", "Instagram"],
 };
 
-export default function App() {
-  return (
-    <div>
-      <ProfileCard />
-    </div>
-  );
-}
-
-function ProfileCard() {
-  return (
-    <div className="card">
-      <ProfileDetails />
-    </div>
-  );
-}
-
-function ProfileDetails() {
+export function ProfileDetails() {
   return (
     <div>
       <img
@@ -35,16 +22,6 @@ function ProfileDetails() {
       </div>
       <p className="about">"{profileDetails.about}"</p>
       <ProfileLinks />
-    </div>
-  );
-}
-
-function ProfileLinks() {
-  return (
-    <div className="links">
-      {profileDetails.links.map(link => (
-        <p className="link">{link}</p>
-      ))}
     </div>
   );
 }
